@@ -81,6 +81,25 @@ VLAN을 통한 부서별 네트워크 분리, OSPF 동적 라우팅, DHCP 자동
 - NAT/PAT Translation Table 확인
 - 외부 웹서버 HTTP 접속 확인
 
+### DHCP 자동 IP 할당 검증
+
+본사 및 지사 PC에서 DHCP를 통한 IP 자동 할당 성공
+
+| PC | VLAN | 할당 IP | 게이트웨이 |
+|---|---|---|---|
+| HR-PC1 | 10 | 192.168.10.100 | 192.168.10.1 |
+| DEV-PC1 | 20 | 192.168.20.100 | 192.168.20.1 |
+| OFFICE-PC1 | 40 | 192.168.40.100 | 192.168.40.1 |
+
+- DHCP를 통해 IP, 서브넷 마스크, 게이트웨이, DNS 자동 할당 확인
+- 본사 VLAN 10/20 및 지사 VLAN 40 DHCP 정상 동작
+
+![HR-PC1 DHCP](images/05-dhcp-hr.png)
+
+![DEV-PC1 DHCP](images/05-dhcp-dev.png)
+
+![OFFICE-PC1 DHCP](images/05-dhcp-office.png)
+
 ### HTTP 웹서버 접속 및 NAT/PAT 검증
 
 HR-PC1과 DEV-PC1에서 외부 웹서버(203.0.113.10)에 HTTP 접속 성공
