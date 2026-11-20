@@ -81,6 +81,28 @@ VLAN을 통한 부서별 네트워크 분리, OSPF 동적 라우팅, DHCP 자동
 - NAT/PAT Translation Table 확인
 - 외부 웹서버 HTTP 접속 확인
 
+### OSPF 동적 라우팅 검증
+
+- 본사 HQ-R1과 ISP-R1 간 OSPF Neighbor FULL 상태 확인
+- OSPF Area 0을 통한 동적 경로 학습 확인
+- 본사에서 지사 네트워크(192.168.40.0/24) 경로 확인
+
+![OSPF 라우팅 검증](images/01-ospf.png)
+
+### ACL 접근 제어 검증
+
+- HR VLAN 10과 DEV VLAN 20 간 접근 차단
+- 지사 OFFICE에서 본사 HR 네트워크 접근 제한
+- 허용된 네트워크 간 정상 통신 확인
+
+**ACL 통신 테스트**
+
+![ACL Ping 검증](images/02-acl-ping.png)
+
+**ACL 정책 확인**
+
+![ACL Policy 검증](images/02-acl-policy.png)
+
 ### DHCP 자동 IP 할당 검증
 
 본사 및 지사 PC에서 DHCP를 통한 IP 자동 할당 성공
