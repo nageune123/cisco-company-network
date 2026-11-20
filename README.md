@@ -81,6 +81,21 @@ VLAN을 통한 부서별 네트워크 분리, OSPF 동적 라우팅, DHCP 자동
 - NAT/PAT Translation Table 확인
 - 외부 웹서버 HTTP 접속 확인
 
+### HTTP 웹서버 접속 및 NAT/PAT 검증
+
+HR-PC1과 DEV-PC1에서 외부 웹서버(203.0.113.10)에 HTTP 접속 성공
+
+- HR-PC1: 192.168.10.100 → 10.0.0.1
+- DEV-PC1: 192.168.20.100 → 10.0.0.1
+- TCP 80 포트 통신 정상
+- HQ-R1에서 NAT Translation Table 확인
+
+![HR-PC1 웹 접속](images/04-http-hr-success.png)
+
+![DEV-PC1 웹 접속](images/04-http-dev-success.png)
+
+![HTTP NAT 변환](images/04-http-nat.png)
+
 ## 5. 프로젝트 파일
 
 - `packet-tracer/Company-Network.pkt` : Packet Tracer 네트워크 실습 파일
